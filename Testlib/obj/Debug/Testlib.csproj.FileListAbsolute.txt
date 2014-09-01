@@ -1,0 +1,6 @@
+C:\MyProjects\ResxToJson.MSBuild\Testlib\bin\Debug\Testlib.dll
+C:\MyProjects\ResxToJson.MSBuild\Testlib\bin\Debug\Testlib.pdb
+C:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\Testlib.Resource1.resources
+C:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\Testlib.csproj.GenerateResource.Cache
+C:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\Testlib.dll
+C:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\Testlib.pdb

@@ -1,0 +1,4 @@
+C:\MyProjects\ResxToJson.MSBuild\ResxToJson.MSBuild\bin\Debug\ResxToJson.MSBuild.dll
+C:\MyProjects\ResxToJson.MSBuild\ResxToJson.MSBuild\bin\Debug\ResxToJson.MSBuild.pdb
+C:\MyProjects\ResxToJson.MSBuild\ResxToJson.MSBuild\obj\Debug\ResxToJson.MSBuild.dll
+C:\MyProjects\ResxToJson.MSBuild\ResxToJson.MSBuild\obj\Debug\ResxToJson.MSBuild.pdb
