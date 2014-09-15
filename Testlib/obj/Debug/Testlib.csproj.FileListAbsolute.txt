@@ -4,3 +4,12 @@ C:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\Testlib.Resource1.resources
 C:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\Testlib.csproj.GenerateResource.Cache
 C:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\Testlib.dll
 C:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\Testlib.pdb
+F:\MyProjects\ResxToJson.MSBuild\Testlib\bin\Debug\Testlib.dll
+F:\MyProjects\ResxToJson.MSBuild\Testlib\bin\Debug\Testlib.pdb
+F:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\Testlib.csproj.GenerateResource.Cache
+F:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\Testlib.dll
+F:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\Testlib.pdb
+F:\MyProjects\ResxToJson.MSBuild\Testlib\bin\Debug\en-gb\Testlib.resources.dll
+F:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\Testlib.resources.Resource1.resources
+F:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\Testlib.resources.Resource.en-gb.resources
+F:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\en-gb\Testlib.resources.dll

@@ -2,3 +2,8 @@ C:\MyProjects\ResxToJson.MSBuild\ResxToJson.MSBuild\bin\Debug\ResxToJson.MSBuild
 C:\MyProjects\ResxToJson.MSBuild\ResxToJson.MSBuild\bin\Debug\ResxToJson.MSBuild.pdb
 C:\MyProjects\ResxToJson.MSBuild\ResxToJson.MSBuild\obj\Debug\ResxToJson.MSBuild.dll
 C:\MyProjects\ResxToJson.MSBuild\ResxToJson.MSBuild\obj\Debug\ResxToJson.MSBuild.pdb
+F:\MyProjects\ResxToJson.MSBuild\ResxToJson.MSBuild\bin\Debug\ResxToJson.MSBuild.dll
+F:\MyProjects\ResxToJson.MSBuild\ResxToJson.MSBuild\bin\Debug\ResxToJson.MSBuild.pdb
+F:\MyProjects\ResxToJson.MSBuild\ResxToJson.MSBuild\obj\Debug\ResxToJson.MSBuild.csprojResolveAssemblyReference.cache
+F:\MyProjects\ResxToJson.MSBuild\ResxToJson.MSBuild\obj\Debug\ResxToJson.MSBuild.dll
+F:\MyProjects\ResxToJson.MSBuild\ResxToJson.MSBuild\obj\Debug\ResxToJson.MSBuild.pdb
