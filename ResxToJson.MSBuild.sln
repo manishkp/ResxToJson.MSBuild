@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResxToJson.MSBuild", "ResxToJson.MSBuild\ResxToJson.MSBuild.csproj", "{1EE74008-7AE5-4C29-9364-CBADD7A06637}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResxToJson.MSBuild", "source\ResxToJson.MSBuild\ResxToJson.MSBuild.csproj", "{1EE74008-7AE5-4C29-9364-CBADD7A06637}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testlib", "Testlib\Testlib.csproj", "{363608A5-299D-487D-83E6-CE5B20A1034E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testlib", "source\Testlib\Testlib.csproj", "{363608A5-299D-487D-83E6-CE5B20A1034E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

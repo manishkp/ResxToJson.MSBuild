@@ -16,7 +16,6 @@ F:\MyProjects\ResxToJson.MSBuild\Testlib\obj\Debug\en-gb\Testlib.resources.dll
 F:\MyProjects\ResxToJson.MSBuild\source\Testlib\bin\Debug\Testlib.dll
 F:\MyProjects\ResxToJson.MSBuild\source\Testlib\bin\Debug\Testlib.pdb
 F:\MyProjects\ResxToJson.MSBuild\source\Testlib\bin\Debug\en-gb\Testlib.resources.dll
-F:\MyProjects\ResxToJson.MSBuild\source\Testlib\obj\Debug\Testlib.csprojResolveAssemblyReference.cache
 F:\MyProjects\ResxToJson.MSBuild\source\Testlib\obj\Debug\Testlib.resources.Resource1.resources
 F:\MyProjects\ResxToJson.MSBuild\source\Testlib\obj\Debug\Testlib.resources.Resource.en-gb.resources
 F:\MyProjects\ResxToJson.MSBuild\source\Testlib\obj\Debug\Testlib.csproj.GenerateResource.Cache
