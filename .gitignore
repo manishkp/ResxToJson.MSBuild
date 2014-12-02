@@ -4,3 +4,4 @@ source/packages/
 packages/
 source/Testlib/bin/Debug/Testlib.Resource.en-gb.json
 source/Testlib/bin/Debug/Testlib.Resource1.json
+source/ResxToJson.MSBuild/obj/Debug/ResxToJson.MSBuild.csproj.FileListAbsolute.txt

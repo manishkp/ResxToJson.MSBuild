@@ -24,7 +24,7 @@ namespace ResxToJson.MSBuild
     /// <summary>
     /// Build task to convert Resource file to Java script Object Notation file
     /// </summary>
-    public class ResxToJsonTask : ITask
+    public class ResxToJsTask : ITask
     {
         /// <summary>
         /// Gets or sets Build Engine
@@ -112,6 +112,14 @@ namespace ResxToJson.MSBuild
                 {
                     file.Write(content);
                 }
+
+                outputFileName = Path.GetFileNameWithoutExtension(embeddedResourcesItem.ItemSpec) + ".json";
+
+                // make a copy in the project path
+                 var sourceFilePath = Path.Combine(
+                    this.ProjectPath,
+                    outputFileName);
+                File.Copy(outputFilePath, sourceFilePath, true);
 
                 this.BuildEngine.LogMessageEvent(
                     new BuildMessageEventArgs(

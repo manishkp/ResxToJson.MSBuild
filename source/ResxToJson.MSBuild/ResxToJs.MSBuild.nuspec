@@ -1,24 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <id>ResxToJson.MSBuild</id>
-        <version>1.0.1</version>
-        <title>ResxToJson.MSBuild</title>
+        <id>ResxToJs.MSBuild</id>
+        <version>1.0.2</version>
+        <title>ResxToJs.MSBuild</title>
         <authors>Manish Kumar</authors>
         <owners>Manish Kumar</owners>
         <licenseUrl>https://bitbucket.org/Manishkp/resxtojson.msbuild/raw/3daf499d69c732c155766e76da9fea47570976cf/license.txt</licenseUrl>
         <projectUrl>https://bitbucket.org/Manishkp/resxtojson.msbuild</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Converts the resx files in the project to corresponding .json files.
+        <description>Converts the resx files in the project to corresponding .js files.
 The JSON will also contain the lcid and lang name, eg : en-us  and 1033</description>
-        <summary>Converts the resx files in the project to corresponding .json files. These can be packaged up along with your other js files.</summary>
+        <summary>Converts the resx files in the project to corresponding .js files. These can be packaged up along with your other js files.</summary>
         <releaseNotes>Note: use unique names for the resx files.
-The JSON will also contain the lcid and lang name, eg : en-us  and 1033, if the filename is of the format &lt;namespace.name&gt;.&lt;language&gt;.resx</releaseNotes>
-        <tags>resx json</tags>
+The JSON will also contain the lcid and lang name, eg : en-us  and 1033, if the filename is of the format &lt;namespace.name&gt;.&lt;language&gt;.js
+        </releaseNotes>
+        <tags>resx js</tags>
     </metadata>
       <files>
-        <file src="ResxToJson.MSBuild.Targets" target="build\ResxToJson.MSBuild.Targets" />
-        <file src="bin\debug\ResxToJson.MSBuild.dll" target="tools\ResxToJson.MSBuild.dll" />    
+        <file src="ResxToJs.MSBuild.Targets" target="build\ResxToJs.MSBuild.Targets" />
+        <file src="bin\debug\ResxToJs.MSBuild.dll" target="tools\ResxToJs.MSBuild.dll" />    
         <file src="license.txt" target="license.txt" />
     </files>
 </package>

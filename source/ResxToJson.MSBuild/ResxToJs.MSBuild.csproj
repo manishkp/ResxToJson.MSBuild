@@ -7,8 +7,8 @@
     <ProjectGuid>{1EE74008-7AE5-4C29-9364-CBADD7A06637}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ResxToJson.MSBuild</RootNamespace>
-    <AssemblyName>ResxToJson.MSBuild</AssemblyName>
+    <RootNamespace>ResxToJs.MSBuild</RootNamespace>
+    <AssemblyName>ResxToJs.MSBuild</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -48,10 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ResxToJsonTask.cs" />
+    <Compile Include="ResxToJsTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ResxToJs.MSBuild.nuspec" />
+    <None Include="ResxToJs.MSBuild.Targets" />
     <None Include="SigningKey.pfx" />
   </ItemGroup>
   <PropertyGroup>
