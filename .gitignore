@@ -1,3 +1,6 @@
 Testlib/obj/
 Testlib/bin/
 source/packages/
+packages/
+source/Testlib/bin/Debug/Testlib.Resource.en-gb.json
+source/Testlib/bin/Debug/Testlib.Resource1.json

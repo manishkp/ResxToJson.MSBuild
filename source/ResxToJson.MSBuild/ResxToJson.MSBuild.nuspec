@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>ResxToJson.MSBuild</id>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <title>ResxToJson.MSBuild</title>
         <authors>Manish Kumar</authors>
         <owners>Manish Kumar</owners>
@@ -17,8 +17,8 @@ The JSON will also contain the lcid and lang name, eg : en-us  and 1033, if the 
         <tags>resx json</tags>
     </metadata>
       <files>
-        <file src="build\ResxToJson.MSBuild.Targets" target="build\ResxToJson.MSBuild.Targets" />
-        <file src="tools\ResxToJson.MSBuild.dll" target="tools\ResxToJson.MSBuild.dll" />    
+        <file src="ResxToJson.MSBuild.Targets" target="build\ResxToJson.MSBuild.Targets" />
+        <file src="bin\debug\ResxToJson.MSBuild.dll" target="tools\ResxToJson.MSBuild.dll" />    
         <file src="license.txt" target="license.txt" />
     </files>
 </package>

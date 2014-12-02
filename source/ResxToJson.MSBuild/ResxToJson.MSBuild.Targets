@@ -19,8 +19,9 @@
 
     <!-- Run the StyleCop MSBuild task. -->
     <ResxToJsonTask
-      ProjectFullPath="$(MSBuildProjectDirectory)"
-      OutputPath ="$(OutputPath)"
+      AssemblyName="$(AssemblyName)"
+      OutputPath="$(OutDir)"
+      ProjectPath="$(MSBuildProjectDirectory)" 
       EmbeddedResourcesItems="@(ResxFiles)">
     </ResxToJsonTask>
   </Target>

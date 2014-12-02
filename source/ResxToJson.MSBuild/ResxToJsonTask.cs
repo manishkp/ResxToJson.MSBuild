@@ -46,13 +46,19 @@ namespace ResxToJson.MSBuild
         /// Gets or sets Project Full Path
         /// </summary>
         [Required]
-        public string ProjectFullPath { get; set; }
+        public string ProjectPath { get; set; }
 
         /// <summary>
         /// Gets or sets Project Output Path
         /// </summary>
         [Required]
         public string OutputPath { get; set; }
+
+        /// <summary>
+        /// Gets or sets Assembly Name
+        /// </summary>
+        [Required]
+        public ITaskItem AssemblyName { get; set; }
 
         /// <summary>
         /// Executes the Task
@@ -69,6 +75,7 @@ namespace ResxToJson.MSBuild
                         string.Empty,
                         "ResxToJson",
                         MessageImportance.Normal));
+                return false;
             }
 
             var args = new BuildMessageEventArgs(
@@ -77,7 +84,7 @@ namespace ResxToJson.MSBuild
                 "ResxToJson",
                 MessageImportance.Normal);
 
-            var outputFullPath = Path.Combine(this.ProjectFullPath, this.OutputPath);
+            var outputFullPath = Path.Combine(this.ProjectPath, this.OutputPath);
 
             this.BuildEngine.LogMessageEvent(args);
             foreach (var embeddedResourcesItem in this.EmbeddedResourcesItems)
@@ -89,13 +96,19 @@ namespace ResxToJson.MSBuild
                         "ResxToJson",
                         MessageImportance.Normal));
 
-                var outputFileName = Path.Combine(
+                var outputFileName = Path.GetFileNameWithoutExtension(embeddedResourcesItem.ItemSpec) + ".json";
+                if (!string.IsNullOrEmpty(this.AssemblyName.ItemSpec))
+                {
+                    outputFileName = this.AssemblyName.ItemSpec + "." + outputFileName;
+                }
+
+                var outputFilePath = Path.Combine(
                     outputFullPath,
-                    Path.GetFileNameWithoutExtension(embeddedResourcesItem.ItemSpec) + ".json");
+                    outputFileName);
 
                 var content = this.GetJsonContent(embeddedResourcesItem.ItemSpec);
 
-                using (var file = new StreamWriter(outputFileName))
+                using (var file = new StreamWriter(outputFilePath))
                 {
                     file.Write(content);
                 }
@@ -125,14 +138,19 @@ namespace ResxToJson.MSBuild
             var cultureInfo = this.GetCultureInfo(resourceItem);
             var json = this.GetJson(resourceItem, cultureInfo);
 
-            var jsonNamespace = Path.GetFileNameWithoutExtension(resourceItem);
+            var jsonName = Path.GetFileNameWithoutExtension(resourceItem);
             if (cultureInfo != null)
             {
-                // this will get rid of locale from the name
-                jsonNamespace = Path.GetFileNameWithoutExtension(jsonNamespace);
+                // this will get rid of locale from the resx name
+                jsonName = Path.GetFileNameWithoutExtension(jsonName);
             }
 
-            return string.Format("var {0}.Strings = {1};", jsonNamespace, json);
+            if (!string.IsNullOrEmpty(this.AssemblyName.ItemSpec))
+            {
+                jsonName = this.AssemblyName.ItemSpec + "." + jsonName;
+            }
+
+            return string.Format("var {0} = {1};", jsonName, json);
         }
 
         /// <summary>
@@ -149,7 +167,7 @@ namespace ResxToJson.MSBuild
         /// </returns>
         private string GetJson(string resourceItem, CultureInfo cultureInfo)
         {
-            var strings = new Dictionary<string, object>();
+            Dictionary<string, object> strings;
             using (var rsxr = new ResXResourceReader(resourceItem))
             {
                 rsxr.UseResXDataNodes = true;
