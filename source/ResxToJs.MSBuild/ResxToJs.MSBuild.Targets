@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!-- Specify where tasks are implemented. -->
-  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)..\tools\ResxToJson.MSBuild.dll" TaskName="ResxToJsonTask"/>
+  <UsingTask AssemblyFile="$(MSBuildThisFileDirectory)..\tools\ResxToJs.MSBuild.dll" TaskName="ResxToJsTask"/>
 
   <PropertyGroup>
     <BuildDependsOn>$(BuildDependsOn);ResxToJson</BuildDependsOn>
@@ -18,11 +18,11 @@
     <Message Text="Processing @(ResxFiles)" Importance="Low" />
 
     <!-- Run the StyleCop MSBuild task. -->
-    <ResxToJsonTask
+    <ResxToJsTask
       AssemblyName="$(AssemblyName)"
       OutputPath="$(OutDir)"
       ProjectPath="$(MSBuildProjectDirectory)" 
       EmbeddedResourcesItems="@(ResxFiles)">
-    </ResxToJsonTask>
+    </ResxToJsTask>
   </Target>
 </Project>

@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ResxToJsonTask.cs">
+// <copyright file="ResxToJsTask.cs">
 //   Copyright belongs to Manish Kumar
 // </copyright>
 // <summary>
@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace ResxToJson.MSBuild
+namespace ResxToJs.MSBuild
 {
     using System;
     using System.Collections;
@@ -17,12 +17,13 @@ namespace ResxToJson.MSBuild
     using System.IO;
     using System.Linq;
     using System.Resources;
+    using System.Text;
     using System.Web.Script.Serialization;
 
     using Microsoft.Build.Framework;
 
     /// <summary>
-    /// Build task to convert Resource file to Java script Object Notation file
+    /// Build task to convert Resource file to Java script file
     /// </summary>
     public class ResxToJsTask : ITask
     {
@@ -71,7 +72,7 @@ namespace ResxToJson.MSBuild
                 this.BuildEngine.LogMessageEvent(
                     new BuildMessageEventArgs(
                         string.Format(
-                            "Skipping conversion of Resource files to json, as there are no resource files found in the project. If your resx file is not being picked up, check if the file is marked for build action = 'Embedded Resource'"),
+                            "Skipping conversion of Resource files to js, as there are no resource files found in the project. If your resx file is not being picked up, check if the file is marked for build action = 'Embedded Resource'"),
                         string.Empty,
                         "ResxToJson",
                         MessageImportance.Normal));
@@ -79,9 +80,9 @@ namespace ResxToJson.MSBuild
             }
 
             var args = new BuildMessageEventArgs(
-                "Started converting Resx To JSON",
+                "Started converting Resx To JS",
                 string.Empty,
-                "ResxToJson",
+                "ResxToJs",
                 MessageImportance.Normal);
 
             var outputFullPath = Path.Combine(this.ProjectPath, this.OutputPath);
@@ -93,10 +94,10 @@ namespace ResxToJson.MSBuild
                     new BuildMessageEventArgs(
                         string.Format("Started converting Resx {0}", embeddedResourcesItem.ItemSpec),
                         string.Empty,
-                        "ResxToJson",
+                        "ResxToJs",
                         MessageImportance.Normal));
 
-                var outputFileName = Path.GetFileNameWithoutExtension(embeddedResourcesItem.ItemSpec) + ".json";
+                var outputFileName = Path.GetFileNameWithoutExtension(embeddedResourcesItem.ItemSpec) + ".js";
                 if (!string.IsNullOrEmpty(this.AssemblyName.ItemSpec))
                 {
                     outputFileName = this.AssemblyName.ItemSpec + "." + outputFileName;
@@ -113,19 +114,19 @@ namespace ResxToJson.MSBuild
                     file.Write(content);
                 }
 
-                outputFileName = Path.GetFileNameWithoutExtension(embeddedResourcesItem.ItemSpec) + ".json";
+                outputFileName = Path.GetFileNameWithoutExtension(embeddedResourcesItem.ItemSpec) + ".js";
+
+                var resxFilePath = Path.Combine(this.ProjectPath, embeddedResourcesItem.ItemSpec);
 
                 // make a copy in the project path
-                 var sourceFilePath = Path.Combine(
-                    this.ProjectPath,
-                    outputFileName);
-                File.Copy(outputFilePath, sourceFilePath, true);
+                var destinationFilePath = Path.Combine(Path.GetDirectoryName(resxFilePath), outputFileName);
+                File.Copy(outputFilePath, destinationFilePath, true);
 
                 this.BuildEngine.LogMessageEvent(
                     new BuildMessageEventArgs(
                         string.Format("Generated file {0}", outputFileName),
                         string.Empty,
-                        "ResxToJson",
+                        "ResxToJs",
                         MessageImportance.Normal));
             }
 
@@ -158,7 +159,20 @@ namespace ResxToJson.MSBuild
                 jsonName = this.AssemblyName.ItemSpec + "." + jsonName;
             }
 
-            return string.Format("var {0} = {1};", jsonName, json);
+            var definingNameSpace = new StringBuilder();
+
+            var namespaceParts = jsonName.Split('.');
+
+            var incrementalNameSpace = string.Empty;
+
+            // leave the last part
+            for (var i = 0; i < namespaceParts.Length - 1; i++)
+            {
+                incrementalNameSpace += (string.IsNullOrEmpty(incrementalNameSpace) ? string.Empty : ".") + namespaceParts[i];
+                definingNameSpace.AppendFormat("var {0} = {0}||{{}};\r\n", incrementalNameSpace);               
+            }
+
+            return string.Format("{0} var {1} = {2};", definingNameSpace, jsonName, json);
         }
 
         /// <summary>

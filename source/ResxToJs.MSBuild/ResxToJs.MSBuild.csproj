@@ -58,7 +58,7 @@
   </ItemGroup>
   <PropertyGroup>
     <NugetExe>..\.nuget\nuget.exe</NugetExe>
-    <NuspecFile>ResxToJson.MSBuild.nuspec</NuspecFile>
+    <NuspecFile>ResxToJs.MSBuild.nuspec</NuspecFile>
     <NugetOutput>..\..\nugetPackages</NugetOutput>
   </PropertyGroup>
   <Target Name="PackFiles">

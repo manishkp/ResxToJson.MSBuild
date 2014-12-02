@@ -6,8 +6,8 @@
         <title>ResxToJs.MSBuild</title>
         <authors>Manish Kumar</authors>
         <owners>Manish Kumar</owners>
-        <licenseUrl>https://bitbucket.org/Manishkp/resxtojson.msbuild/raw/3daf499d69c732c155766e76da9fea47570976cf/license.txt</licenseUrl>
-        <projectUrl>https://bitbucket.org/Manishkp/resxtojson.msbuild</projectUrl>
+        <licenseUrl>https://bitbucket.org/Manishkp/resxtojs.msbuild/raw/3daf499d69c732c155766e76da9fea47570976cf/license.txt</licenseUrl>
+        <projectUrl>https://bitbucket.org/Manishkp/resxtojs.msbuild</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Converts the resx files in the project to corresponding .js files.
 The JSON will also contain the lcid and lang name, eg : en-us  and 1033</description>
