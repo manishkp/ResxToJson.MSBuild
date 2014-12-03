@@ -2,18 +2,17 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>ResxToJs.MSBuild</id>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
         <title>ResxToJs.MSBuild</title>
         <authors>Manish Kumar</authors>
         <owners>Manish Kumar</owners>
         <licenseUrl>https://bitbucket.org/Manishkp/resxtojs.msbuild/raw/3daf499d69c732c155766e76da9fea47570976cf/license.txt</licenseUrl>
         <projectUrl>https://bitbucket.org/Manishkp/resxtojs.msbuild</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Converts the resx files in the project to corresponding .js files.
-The JSON will also contain the lcid and lang name, eg : en-us  and 1033</description>
+        <description>Converts the resx files in the project to corresponding .js files.</description>
         <summary>Converts the resx files in the project to corresponding .js files. These can be packaged up along with your other js files.</summary>
         <releaseNotes>Note: use unique names for the resx files.
-The JSON will also contain the lcid and lang name, eg : en-us  and 1033, if the filename is of the format &lt;namespace.name&gt;.&lt;language&gt;.js
+if the filename is of the format &lt;namespace.name&gt;.&lt;language&gt;.js
         </releaseNotes>
         <tags>resx js</tags>
     </metadata>

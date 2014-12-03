@@ -16,6 +16,7 @@ namespace ResxToJs.MSBuild
     using System.Globalization;
     using System.IO;
     using System.Linq;
+    using System.Net.NetworkInformation;
     using System.Resources;
     using System.Text;
     using System.Web.Script.Serialization;
@@ -165,14 +166,17 @@ namespace ResxToJs.MSBuild
 
             var incrementalNameSpace = string.Empty;
 
+            var prefix = "var ";
+
             // leave the last part
             for (var i = 0; i < namespaceParts.Length - 1; i++)
-            {
+            {                
                 incrementalNameSpace += (string.IsNullOrEmpty(incrementalNameSpace) ? string.Empty : ".") + namespaceParts[i];
-                definingNameSpace.AppendFormat("var {0} = {0}||{{}};\r\n", incrementalNameSpace);               
+                definingNameSpace.AppendFormat("{0}{1} = {1}||{{}};\r\n", prefix, incrementalNameSpace);
+                prefix = string.Empty;
             }
 
-            return string.Format("{0} var {1} = {2};", definingNameSpace, jsonName, json);
+            return string.Format("{0}{1} = {2};", definingNameSpace.ToString(), jsonName, json);
         }
 
         /// <summary>
@@ -198,9 +202,6 @@ namespace ResxToJs.MSBuild
                         x => x.Key.ToString(),
                         x => ((ResXDataNode)x.Value).GetValue((ITypeResolutionService)null));
             }
-
-            strings.Add("lcid", cultureInfo == null ? 0 : cultureInfo.LCID);
-            strings.Add("lang", cultureInfo == null ? string.Empty : cultureInfo.Name);
 
             return new JavaScriptSerializer().Serialize(strings);
         }
