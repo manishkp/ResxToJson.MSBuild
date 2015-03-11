@@ -33,7 +33,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>SigningKey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>SigningKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Build.Framework" />
@@ -52,9 +52,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ResxToJs.MSBuild.nuspec" />
+    <None Include="ResxToJs.MSBuild.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ResxToJs.MSBuild.Targets" />
-    <None Include="SigningKey.pfx" />
+    <None Include="SigningKey.snk" />
   </ItemGroup>
   <PropertyGroup>
     <NugetExe>..\.nuget\nuget.exe</NugetExe>

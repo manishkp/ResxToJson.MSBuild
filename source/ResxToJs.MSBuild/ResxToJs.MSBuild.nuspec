@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>ResxToJs.MSBuild</id>
-        <version>1.0.4</version>
+        <version>1.0.5</version>
         <title>ResxToJs.MSBuild</title>
         <authors>Manish Kumar</authors>
         <owners>Manish Kumar</owners>
@@ -13,6 +13,7 @@
         <summary>Converts the resx files in the project to corresponding .js files. These can be packaged up along with your other js files.</summary>
         <releaseNotes>Note: use unique names for the resx files.
 if the filename is of the format &lt;namespace.name&gt;.&lt;language&gt;.js
+        1.0.5: Excluding embedded files
         </releaseNotes>
         <tags>resx js</tags>
     </metadata>

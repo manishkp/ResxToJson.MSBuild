@@ -11,7 +11,7 @@
     <AssemblyName>Testlib.localization</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>152d5f39</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>ac5b49ad</NuGetPackageImportStamp>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
@@ -43,27 +43,30 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="resources\Resource.en-gb.Designer.cs">
+    <Compile Include="Resources\Resource.en-gb.Designer.cs">
       <DependentUpon>Resource.en-gb.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="resources\Resource1.Designer.cs">
+    <Compile Include="Resources\Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="resources\Resource.en-gb.resx">
+    <EmbeddedResource Include="Resources\Resource.en-gb.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.en-gb.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="resources\Resource1.resx">
+    <EmbeddedResource Include="Resources\Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddeResources\SampleEmbeddedXml.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -74,10 +77,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-    <Error Condition="!Exists('..\packages\ResxToJs.MSBuild.1.0.4\build\ResxToJs.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ResxToJs.MSBuild.1.0.4\build\ResxToJs.MSBuild.Targets'))" />
+    <Error Condition="!Exists('..\packages\ResxToJs.MSBuild.1.0.5\build\ResxToJs.MSBuild.Targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ResxToJs.MSBuild.1.0.5\build\ResxToJs.MSBuild.Targets'))" />
   </Target>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Import Project="..\packages\ResxToJs.MSBuild.1.0.4\build\ResxToJs.MSBuild.Targets" Condition="Exists('..\packages\ResxToJs.MSBuild.1.0.4\build\ResxToJs.MSBuild.Targets')" />
+  <Import Project="..\packages\ResxToJs.MSBuild.1.0.5\build\ResxToJs.MSBuild.Targets" Condition="Exists('..\packages\ResxToJs.MSBuild.1.0.5\build\ResxToJs.MSBuild.Targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

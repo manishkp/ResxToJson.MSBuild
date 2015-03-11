@@ -91,9 +91,20 @@ namespace ResxToJs.MSBuild
             this.BuildEngine.LogMessageEvent(args);
             foreach (var embeddedResourcesItem in this.EmbeddedResourcesItems)
             {
+                if (String.Compare(Path.GetExtension(embeddedResourcesItem.ItemSpec),".resx",StringComparison.InvariantCultureIgnoreCase) != 0)
+                {
+                    this.BuildEngine.LogMessageEvent(
+                       new BuildMessageEventArgs(
+                           string.Format("Skipping converting non resx Resource file {0}.", embeddedResourcesItem.ItemSpec),
+                           string.Empty,
+                           "ResxToJs",
+                           MessageImportance.Normal));
+                    continue;
+                }
+
                 this.BuildEngine.LogMessageEvent(
                     new BuildMessageEventArgs(
-                        string.Format("Started converting Resx {0}", embeddedResourcesItem.ItemSpec),
+                        string.Format("Started converting Resx {0}.", embeddedResourcesItem.ItemSpec),
                         string.Empty,
                         "ResxToJs",
                         MessageImportance.Normal));
