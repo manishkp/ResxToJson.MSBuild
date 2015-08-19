@@ -28,6 +28,14 @@ namespace ResxToJs.MSBuild
     /// </summary>
     public class ResxToJsTask : ITask
     {
+	    /// <summary>
+	    /// The JSON format.
+	    /// </summary>
+	    public const string OutputJsonFormat = @"{0}{1} = (function () {{ 
+	var strings = {2};
+	return $.extend({{}}, {1} || {{}}, strings);
+}}());";
+
         /// <summary>
         /// Gets or sets Build Engine
         /// </summary>
@@ -185,9 +193,9 @@ namespace ResxToJs.MSBuild
                 incrementalNameSpace += (string.IsNullOrEmpty(incrementalNameSpace) ? string.Empty : ".") + namespaceParts[i];
                 definingNameSpace.AppendFormat("{0}{1} = {1}||{{}};\r\n", prefix, incrementalNameSpace);
                 prefix = string.Empty;
-            }
-
-            return string.Format("{0}{1} = {2};", definingNameSpace.ToString(), jsonName, json);
+            }	      
+ 
+			 return string.Format(OutputJsonFormat, definingNameSpace.ToString(), jsonName, json);
         }
 
         /// <summary>
