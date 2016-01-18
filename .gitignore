@@ -8,3 +8,4 @@ source/ResxToJson.MSBuild/obj/Debug/ResxToJson.MSBuild.csproj.FileListAbsolute.t
 source/Testlib/obj/
 source/Testlib/bin/
 source/ResxToJs.MSBuild/obj/
+source/ResxToJs.MSBuild/bin/

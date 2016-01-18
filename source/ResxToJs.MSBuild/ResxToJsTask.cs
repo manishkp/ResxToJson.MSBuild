@@ -7,6 +7,8 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Newtonsoft.Json;
+
 namespace ResxToJs.MSBuild
 {
     using System;
@@ -221,8 +223,7 @@ namespace ResxToJs.MSBuild
                         x => x.Key.ToString(),
                         x => ((ResXDataNode)x.Value).GetValue((ITypeResolutionService)null));
             }
-
-            return new JavaScriptSerializer().Serialize(strings);
+            return JsonConvert.SerializeObject(strings, Formatting.Indented);
         }
 
         /// <summary>

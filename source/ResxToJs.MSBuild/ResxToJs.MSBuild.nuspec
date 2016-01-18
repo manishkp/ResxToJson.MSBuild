@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>ResxToJs.MSBuild</id>
-        <version>1.0.6</version>
+        <version>1.0.7</version>
         <title>ResxToJs.MSBuild</title>
         <authors>Manish Kumar</authors>
         <owners>Manish Kumar</owners>
@@ -15,12 +15,14 @@
 if the filename is of the format &lt;namespace.name&gt;.&lt;language&gt;.js
         1.0.5: Excluding embedded files
 		1.0.6: Supporting merge of different locale strings, load neutral and then localized one, this will created a merged object with neutral for non localized string
+    1.0.7: Generating multiline json so that its easier to resolve conflicts, one should minify the output as needed.
         </releaseNotes>
-        <tags>resx js</tags>
+        <tags>resx js</tags>     
     </metadata>
       <files>
         <file src="ResxToJs.MSBuild.Targets" target="build\ResxToJs.MSBuild.Targets" />
-        <file src="bin\debug\ResxToJs.MSBuild.dll" target="tools\ResxToJs.MSBuild.dll" />    
+        <file src="bin\debug\ResxToJs.MSBuild.dll" target="tools\ResxToJs.MSBuild.dll" />
+        <file src="..\packages\Newtonsoft.Json.6.0.8\lib\net35\Newtonsoft.Json.dll" target="tools\Newtonsoft.Json.dll" />
         <file src="license.txt" target="license.txt" />
-    </files>
+    </files>    
 </package>
